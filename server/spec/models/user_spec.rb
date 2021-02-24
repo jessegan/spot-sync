@@ -14,16 +14,16 @@ RSpec.describe User, type: :model do
       expect(user).to be_valid
     end
     
-    it "is not valid wihtout a display_name" do
+    it "is not valid wihtout a valid display_name" do
       user = User.new(missing_display_name)
 
-      expect(user).to be_valid
+      expect(user).not_to be_valid
     end
 
-    it "is not valid without a spotify_link" do
+    it "is not valid without a valid spotify_link" do
       user = User.new(missing_spotify_link)
 
-      expect(user).to be_valid
+      expect(user).not_to be_valid
     end
 
   end
